@@ -1,6 +1,7 @@
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -27,6 +28,7 @@ public class DirectorMappingDriver {
 		job.setNumReduceTasks(0);
 		job.setJarByClass(DirectorMappingDriver.class);
 		job.setMapperClass(DirectorMapper.class);
+		job.setReducerClass(Reducer.class);
 		
 		Path inPath = new Path(inFile);
 		Path outPath = new Path(outFile);
