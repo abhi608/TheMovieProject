@@ -17,7 +17,7 @@ public class DirectorMappingDriver {
 		}
 		
 		Configuration conf = new Configuration();
-		conf.set("mapreduce.output.textoutputformat.separator", " ");
+		conf.set("mapreduce.output.textoutputformat.separator", "\t");
 		
 		FileSystem fs = FileSystem.get(conf);
 		String inFile = args[0];
