@@ -28,6 +28,7 @@ public class DirectorMappingDriver {
 		job.setNumReduceTasks(1);
 		job.setJarByClass(DirectorMappingDriver.class);
 		job.setMapperClass(DirectorMapper.class);
+		job.setReducerClass(DirectorReducer.class);
 		
 		Path inPath = new Path(inFile);
 		Path outPath = new Path(outFile);

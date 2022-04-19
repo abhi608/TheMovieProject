@@ -17,6 +17,7 @@ public class DirectorMapper extends Mapper<LongWritable, Text, Text, Text> {
 	Text k = new Text();
 	Text v = new Text();
 	
+	@Override
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 		String[] cols = value.toString().split("\t");
 		if(cols.length != 4) return;
