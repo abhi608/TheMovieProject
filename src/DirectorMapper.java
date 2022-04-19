@@ -25,7 +25,6 @@ public class DirectorMapper extends Mapper<LongWritable, Text, Text, Text> {
 		crew = crew.replaceAll("\"\\[", "[");
 		crew = crew.replaceAll("\\]\"", "]");
 		crew = crew.replaceAll("\"\"", "\"");
-//		crew = "{\"data\": " + crew + "}";
 		try {
 			JSONArray root = (JSONArray) JSONValue.parseWithException(crew);
 			for(int i=0; i<root.size(); i++) {
@@ -41,14 +40,8 @@ public class DirectorMapper extends Mapper<LongWritable, Text, Text, Text> {
 				}
 			}
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-//		k.set(Integer.toString(cols.length));
-//		v.set(crew);
-//		context.write(k, v);
 	}
 	
 }
