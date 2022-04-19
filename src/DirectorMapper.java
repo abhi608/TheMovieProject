@@ -21,6 +21,9 @@ public class DirectorMapper extends Mapper<LongWritable, Text, Text, Text> {
 		String[] cols = value.toString().split("\t");
 		if(cols.length != 4) return;
 		String crew = cols[3];
+		crew = crew.replaceAll("\"[", "[");
+		crew = crew.replaceAll("]\"", "]");
+		crew = crew.replaceAll("\"\"", "\"");
 //		crew = "{\"data\": " + crew + "}";
 //		try {
 //			JSONArray root = (JSONArray) JSONValue.parseWithException(crew);
