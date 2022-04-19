@@ -46,7 +46,7 @@ public class DirectorMapper extends Mapper<LongWritable, Text, Text, Text> {
 		
 		
 		k.set(Integer.toString(cols.length));
-		v.set(cols[3]);
+		v.set(crew);
 		context.write(k, v);
 	}
 	
