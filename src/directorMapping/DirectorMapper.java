@@ -12,6 +12,7 @@ public class DirectorMapper extends Mapper<LongWritable, Text, Text, Text> {
 	Text v = new Text();
 	
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+		System.out.println("Started map");
 		String[] cols = value.toString().split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
 		k.set(key.toString());
 		v.set(Arrays.toString(cols));
