@@ -24,6 +24,7 @@ public class DirectorMappingDriver {
 		
 		Job job = Job.getInstance(conf);
 		job.setJobName("Director Id-Movie mapping");
+		job.setNumReduceTasks(0);
 		job.setJarByClass(DirectorMappingDriver.class);
 		job.setMapperClass(DirectorMapper.class);
 		
