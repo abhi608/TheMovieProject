@@ -9,6 +9,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class DirectorMappingDriver {
 	
 	public static void main(String... args) throws Exception {
+		System.out.println("Started main");
 		if (args.length != 2) {
 			System.err.println("Usage: DirectorMappingDriver <Input path> <Output path>");
 			System.exit(-1);
