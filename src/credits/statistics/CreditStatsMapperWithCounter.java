@@ -7,6 +7,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Mapper.Context;
 
+import com.google.common.base.Strings;
+
 enum Rows {
 	ROW_COUNT,
 	ROWS_WITH_MISSING_COLUMNS
@@ -58,7 +60,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		}
 		
 //		movie_id
-		if(cols[0] == null || cols[0].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[0])) {
 			context.getCounter(Movie_id.NULL).increment(1);
 		} else {
 			context.getCounter(Movie_id.NOT_NULL).increment(1);
@@ -73,7 +75,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		
 		
 //		title
-		if(cols[1] == null || cols[1].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[1])) {
 			context.getCounter(Title.NULL).increment(1);
 		} else {
 			context.getCounter(Title.NOT_NULL).increment(1);
@@ -88,7 +90,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		
 		
 //		cast
-		if(cols[2] == null || cols[2].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[2])) {
 			context.getCounter(Cast.NULL).increment(1);
 		} else {
 			context.getCounter(Cast.NOT_NULL).increment(1);
@@ -103,7 +105,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		
 		
 //		crew
-		if(cols[3] == null || cols[3].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[3])) {
 			context.getCounter(Crew.NULL).increment(1);
 		} else {
 			context.getCounter(Crew.NOT_NULL).increment(1);

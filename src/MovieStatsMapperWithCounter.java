@@ -7,6 +7,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Mapper.Context;
 
+import com.google.common.base.Strings;
+
 enum Rows {
 	ROW_COUNT,
 	ROWS_WITH_MISSING_COLUMNS
@@ -85,7 +87,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 //		At this point, total # columns = 11
 		
 //		movie_id
-		if(cols[0] == null || cols[0].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[0])) {
 			context.getCounter(MovieId.NULL).increment(1);
 		} else {
 			context.getCounter(MovieId.NOT_NULL).increment(1);
@@ -100,7 +102,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		title
-		if(cols[1] == null || cols[1].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[1])) {
 			context.getCounter(Title.NULL).increment(1);
 		} else {
 			context.getCounter(Title.NOT_NULL).increment(1);
@@ -115,7 +117,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		releaseDate
-		if(cols[2] == null || cols[2].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[2])) {
 			context.getCounter(ReleaseDate.NULL).increment(1);
 		} else {
 			context.getCounter(ReleaseDate.NOT_NULL).increment(1);
@@ -123,7 +125,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		genres
-		if(cols[3] == null || cols[3].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[3])) {
 			context.getCounter(Genres.NULL).increment(1);
 		} else {
 			context.getCounter(Genres.NOT_NULL).increment(1);
@@ -131,7 +133,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		originalLanguage
-		if(cols[4] == null || cols[4].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[4])) {
 			context.getCounter(OriginalLanguage.NULL).increment(1);
 		} else {
 			context.getCounter(OriginalLanguage.NOT_NULL).increment(1);
@@ -139,7 +141,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		spokenLanguages
-		if(cols[5] == null || cols[5].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[5])) {
 			context.getCounter(SpokenLanguages.NULL).increment(1);
 		} else {
 			context.getCounter(SpokenLanguages.NOT_NULL).increment(1);
@@ -147,7 +149,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		budget
-		if(cols[6] == null || cols[6].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[6])) {
 			context.getCounter(Budget.NULL).increment(1);
 		} else {
 			context.getCounter(Budget.NOT_NULL).increment(1);
@@ -155,7 +157,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		revenue
-		if(cols[7] == null || cols[7].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[7])) {
 			context.getCounter(Revenue.NULL).increment(1);
 		} else {
 			context.getCounter(Revenue.NOT_NULL).increment(1);
@@ -163,7 +165,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		runtime
-		if(cols[8] == null || cols[8].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[8])) {
 			context.getCounter(Runtime.NULL).increment(1);
 		} else {
 			context.getCounter(Runtime.NOT_NULL).increment(1);
@@ -171,7 +173,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		popularity
-		if(cols[9] == null || cols[9].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[9])) {
 			context.getCounter(Popularity.NULL).increment(1);
 		} else {
 			context.getCounter(Popularity.NOT_NULL).increment(1);
@@ -179,7 +181,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 		
 //		voteAvg
-		if(cols[10] == null || cols[10].isBlank()) {
+		if(Strings.isNullOrEmpty(cols[10])) {
 			context.getCounter(VoteAvg.NULL).increment(1);
 		} else {
 			context.getCounter(VoteAvg.NOT_NULL).increment(1);
