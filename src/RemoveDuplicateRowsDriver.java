@@ -24,7 +24,7 @@ public class RemoveDuplicateRowsDriver {
 		String outFile = args[1];
 		
 		Job job = Job.getInstance(conf);
-		job.setJobName("Movie Id-Cast Id mapping");
+		job.setJobName("Remove Duplicate Rows from Credits");
 		job.setNumReduceTasks(1);
 		job.setJarByClass(RemoveDuplicateRowsDriver.class);
 		job.setMapperClass(RemoveDuplicateRowsMapper.class);

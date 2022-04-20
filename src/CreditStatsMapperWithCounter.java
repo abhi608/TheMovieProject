@@ -77,7 +77,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 			context.getCounter(Title.NULL).increment(1);
 		} else {
 			context.getCounter(Title.NOT_NULL).increment(1);
-			String title = cols[2];
+			String title = cols[1];
 			if(titleSet.contains(title)) {
 				context.getCounter(Title.DUPLICATE).increment(1);
 			} else {
@@ -107,7 +107,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 			context.getCounter(Crew.NULL).increment(1);
 		} else {
 			context.getCounter(Crew.NOT_NULL).increment(1);
-			String crew = cols[2];
+			String crew = cols[3];
 			if(crewSet.contains(crew)) {
 				context.getCounter(Crew.DUPLICATE).increment(1);
 			} else {
