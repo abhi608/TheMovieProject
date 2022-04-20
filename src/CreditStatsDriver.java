@@ -6,12 +6,12 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class CreditStats {
+public class CreditStatsDriver {
 	
 	public static void main(String... args) throws Exception {
 		System.out.println("Started main");
 		if (args.length != 2) {
-			System.err.println("Usage: CreditStats <Input path> <Output path>");
+			System.err.println("Usage: CreditStatsDriver <Input path> <Output path>");
 			System.exit(-1);
 		}
 		
@@ -23,8 +23,9 @@ public class CreditStats {
 		String outFile = args[1];
 		
 		Job job = Job.getInstance(conf);
-		job.setJobName("Cast Id-Name mapping");
-		job.setJarByClass(CreditStats.class);
+		job.setJobName("Credit statistics");
+		job.setNumReduceTasks(0);
+		job.setJarByClass(CreditStatsDriver.class);
 		job.setMapperClass(CreditStatsMapperWithCounter.class);
 		
 		Path inPath = new Path(inFile);
