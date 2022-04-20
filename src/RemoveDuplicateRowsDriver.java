@@ -38,7 +38,7 @@ public class RemoveDuplicateRowsDriver {
 		FileInputFormat.addInputPath(job, inPath);
 		FileOutputFormat.setOutputPath(job, outPath);
 		
-		job.setOutputKeyClass(NullWritable.class);
+		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
 		
 		System.exit(job.waitForCompletion(true) ? 0 : 1);
