@@ -13,18 +13,14 @@ import net.minidev.json.parser.ParseException;
 public class RemoveDuplicateRowsMapper extends Mapper<LongWritable, Text, Text, Text> {
 	
 	Text k = new Text();
-	Text v = new Text();
 	
 	@Override
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-		String[] colsTmp = value.toString().split("\t");
-		if(colsTmp.length != 4) return;
-		String[] cols = value.toString().split("\t", 2);
-		String id = cols[0];
-		String rest = cols[1];
-		k.set(rest);
-		v.set(id);
-		context.write(k, v);
+		String[] cols = value.toString().split("\t");
+		if(cols.length != 4) return;
+		String title = cols[1];
+		k.set(title);
+		context.write(k, value);
 	}
 	
 }
