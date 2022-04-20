@@ -63,7 +63,7 @@ public class MovieFilterColumnMapper extends Mapper<LongWritable, Text, Text, Nu
 			List<String> spokenLangId = new ArrayList<>();
 			for(int i=0; i<spokenLangList.size(); i++) {
 				JSONObject curLang = (JSONObject) spokenLangList.get(i);
-				spokenLangId.add(String.valueOf((int) curLang.get("iso_639_1")));
+				spokenLangId.add((String) curLang.get("iso_639_1"));
 			}
 			String spokenLanguages = String.join(",", spokenLangId);
 			
