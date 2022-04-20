@@ -82,29 +82,6 @@ public class MovieFilterColumnMapper extends Mapper<LongWritable, Text, Text, Nu
 			
 		}
 		
-		
-		
-		
-		String movieId = String.valueOf(cols[0]);
-		k.set(movieId);
-		String cast = cols[2];
-		cast = cast.replaceAll("\"\\[", "[");
-		cast = cast.replaceAll("\\]\"", "]");
-		cast = cast.replaceAll("\"\"", "\"");
-		try {
-			JSONArray root = (JSONArray) JSONValue.parseWithException(cast);
-//			Only consider the top 3 casts per movie.
-//			Cast array is in decreasing order of importance
-//			of casts in that movie
-			for(int i=0; i<root.size() && i<3; i++) {
-				JSONObject curCast = (JSONObject) root.get(i);
-				String castId = String.valueOf((int) curCast.get("id"));
-				v.set(castId);  
-				context.write(k, v);
-			}
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
 	}
 	
 }
