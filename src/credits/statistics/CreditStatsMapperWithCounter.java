@@ -58,7 +58,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		}
 		
 //		movie_id
-		if(cols[0] == null) {
+		if(cols[0] == null || cols[0].isBlank()) {
 			context.getCounter(Movie_id.NULL).increment(1);
 		} else {
 			context.getCounter(Movie_id.NOT_NULL).increment(1);
@@ -73,7 +73,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		
 		
 //		title
-		if(cols[1] == null) {
+		if(cols[1] == null || cols[1].isBlank()) {
 			context.getCounter(Title.NULL).increment(1);
 		} else {
 			context.getCounter(Title.NOT_NULL).increment(1);
@@ -88,7 +88,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		
 		
 //		cast
-		if(cols[2] == null) {
+		if(cols[2] == null || cols[2].isBlank()) {
 			context.getCounter(Cast.NULL).increment(1);
 		} else {
 			context.getCounter(Cast.NOT_NULL).increment(1);
@@ -103,7 +103,7 @@ public class CreditStatsMapperWithCounter extends Mapper<LongWritable, Text, Tex
 		
 		
 //		crew
-		if(cols[3] == null) {
+		if(cols[3] == null || cols[3].isBlank()) {
 			context.getCounter(Crew.NULL).increment(1);
 		} else {
 			context.getCounter(Crew.NOT_NULL).increment(1);

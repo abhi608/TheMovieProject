@@ -15,7 +15,7 @@ import net.minidev.json.parser.ParseException;
 
 enum Errors {
 	PARSEERROR,
-	COLUMNS_MISSING
+	ROWS_WITH_MISSING_COLUMNS
 }
 
 public class MovieFilterColumnMapper extends Mapper<LongWritable, Text, Text, NullWritable> {
@@ -33,7 +33,7 @@ public class MovieFilterColumnMapper extends Mapper<LongWritable, Text, Text, Nu
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 		String[] cols = value.toString().split("\t");
 		if(cols.length != 20) {
-			context.getCounter(Errors.COLUMNS_MISSING).increment(1);
+			context.getCounter(Errors.ROWS_WITH_MISSING_COLUMNS).increment(1);
 			return;
 		}
 		try {
