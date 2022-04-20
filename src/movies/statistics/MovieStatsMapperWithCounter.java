@@ -86,7 +86,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		
 //		At this point, total # columns = 11
 		
-//		movie_id
+//		movie_id -> 0
 		if(Strings.isNullOrEmpty(cols[0])) {
 			context.getCounter(MovieId.NULL).increment(1);
 		} else {
@@ -101,7 +101,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		title
+//		title -> 1
 		if(Strings.isNullOrEmpty(cols[1])) {
 			context.getCounter(Title.NULL).increment(1);
 		} else {
@@ -116,7 +116,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		releaseDate
+//		releaseDate -> 2
 		if(Strings.isNullOrEmpty(cols[2])) {
 			context.getCounter(ReleaseDate.NULL).increment(1);
 		} else {
@@ -124,7 +124,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		genres
+//		genres -> 3
 		if(Strings.isNullOrEmpty(cols[3])) {
 			context.getCounter(Genres.NULL).increment(1);
 		} else {
@@ -132,7 +132,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		originalLanguage
+//		originalLanguage -> 4
 		if(Strings.isNullOrEmpty(cols[4])) {
 			context.getCounter(OriginalLanguage.NULL).increment(1);
 		} else {
@@ -140,7 +140,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		spokenLanguages
+//		spokenLanguages -> 5
 		if(Strings.isNullOrEmpty(cols[5])) {
 			context.getCounter(SpokenLanguages.NULL).increment(1);
 		} else {
@@ -148,7 +148,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		budget
+//		budget -> 6
 		if(Strings.isNullOrEmpty(cols[6])) {
 			context.getCounter(Budget.NULL).increment(1);
 		} else {
@@ -156,7 +156,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		revenue
+//		revenue -> 7
 		if(Strings.isNullOrEmpty(cols[7])) {
 			context.getCounter(Revenue.NULL).increment(1);
 		} else {
@@ -164,7 +164,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		runtime
+//		runtime -> 8
 		if(Strings.isNullOrEmpty(cols[8])) {
 			context.getCounter(Runtime.NULL).increment(1);
 		} else {
@@ -172,7 +172,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		popularity
+//		popularity -> 9
 		if(Strings.isNullOrEmpty(cols[9])) {
 			context.getCounter(Popularity.NULL).increment(1);
 		} else {
@@ -180,7 +180,7 @@ public class MovieStatsMapperWithCounter extends Mapper<LongWritable, Text, Text
 		}
 		
 		
-//		voteAvg
+//		voteAvg -> 10
 		if(Strings.isNullOrEmpty(cols[10])) {
 			context.getCounter(VoteAvg.NULL).increment(1);
 		} else {
