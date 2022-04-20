@@ -27,8 +27,8 @@ public class CastToMovieMapper extends Mapper<LongWritable, Text, Text, Text> {
 		cast = cast.replaceAll("\"\"", "\"");
 		try {
 			JSONArray root = (JSONArray) JSONValue.parseWithException(cast);
-//			Only consider the top 3 casts per movie
-//			cast array is in decreasing order of importance
+//			Only consider the top 3 casts per movie.
+//			Cast array is in decreasing order of importance
 //			of casts in that movie
 			for(int i=0; i<root.size() && i<3; i++) {
 				JSONObject curCast = (JSONObject) root.get(i);
