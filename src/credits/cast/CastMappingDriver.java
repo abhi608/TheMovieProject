@@ -27,7 +27,7 @@ public class CastMappingDriver {
 		job.setNumReduceTasks(1);
 		job.setJarByClass(CastMappingDriver.class);
 		job.setMapperClass(CastMapper.class);
-		job.setReducerClass(CastReducer.class);
+		job.setReducerClass(GenreReducer.class);
 		
 		Path inPath = new Path(inFile);
 		Path outPath = new Path(outFile);

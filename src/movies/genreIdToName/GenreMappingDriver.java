@@ -7,27 +7,28 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class MovieFilterColumnDriver {
+public class GenreMappingDriver {
 	
 	public static void main(String... args) throws Exception {
 		System.out.println("Started main");
 		if (args.length != 2) {
-			System.err.println("Usage: MovieFilterColumnDriver <Input path> <Output path>");
+			System.err.println("Usage: GenreMappingDriver <Input path> <Output path>");
 			System.exit(-1);
 		}
 		
 		Configuration conf = new Configuration();
-		conf.set("mapreduce.output.textoutputformat.separator", "");
+		conf.set("mapreduce.output.textoutputformat.separator", "\t");
 		
 		FileSystem fs = FileSystem.get(conf);
 		String inFile = args[0];
 		String outFile = args[1];
 		
 		Job job = Job.getInstance(conf);
-		job.setJobName("Movie Filter Columns");
-		job.setNumReduceTasks(0);
-		job.setJarByClass(MovieFilterColumnDriver.class);
+		job.setJobName("Movie Genre Id-Name Mapper");
+		job.setNumReduceTasks(1);
+		job.setJarByClass(GenreMappingDriver.class);
 		job.setMapperClass(GenreMapper.class);
+		job.setReducerClass(GenreReducer.class);
 		
 		Path inPath = new Path(inFile);
 		Path outPath = new Path(outFile);
@@ -38,7 +39,7 @@ public class MovieFilterColumnDriver {
 		FileOutputFormat.setOutputPath(job, outPath);
 		
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(NullWritable.class);
+		job.setOutputValueClass(Text.class);
 		
 		System.exit(job.waitForCompletion(true) ? 0 : 1);
 		
