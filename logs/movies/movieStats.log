@@ -1,0 +1,85 @@
+WARNING: Use "yarn jar" to launch YARN applications.
+Started main
+22/04/22 11:57:27 INFO client.RMProxy: Connecting to ResourceManager at horton.hpc.nyu.edu/10.32.35.134:8032
+22/04/22 11:57:27 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+22/04/22 11:57:27 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /user/av2783/.staging/job_1648648882306_28881
+22/04/22 11:57:28 INFO input.FileInputFormat: Total input files to process : 1
+22/04/22 11:57:28 INFO mapreduce.JobSubmitter: number of splits:1
+22/04/22 11:57:28 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+22/04/22 11:57:28 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1648648882306_28881
+22/04/22 11:57:28 INFO mapreduce.JobSubmitter: Executing with tokens: []
+22/04/22 11:57:28 INFO conf.Configuration: resource-types.xml not found
+22/04/22 11:57:28 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+22/04/22 11:57:28 INFO impl.YarnClientImpl: Submitted application application_1648648882306_28881
+22/04/22 11:57:28 INFO mapreduce.Job: The url to track the job: http://horton.hpc.nyu.edu:8088/proxy/application_1648648882306_28881/
+22/04/22 11:57:28 INFO mapreduce.Job: Running job: job_1648648882306_28881
+22/04/22 11:57:33 INFO mapreduce.Job: Job job_1648648882306_28881 running in uber mode : false
+22/04/22 11:57:33 INFO mapreduce.Job:  map 0% reduce 0%
+22/04/22 11:57:37 INFO mapreduce.Job:  map 100% reduce 0%
+22/04/22 11:57:37 INFO mapreduce.Job: Job job_1648648882306_28881 completed successfully
+22/04/22 11:57:37 INFO mapreduce.Job: Counters: 48
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=221005
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=365989
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=7
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters
+		Launched map tasks=1
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=7704
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=1926
+		Total vcore-milliseconds taken by all map tasks=1926
+		Total megabyte-milliseconds taken by all map tasks=7888896
+	Map-Reduce Framework
+		Map input records=4704
+		Map output records=0
+		Input split bytes=146
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=37
+		CPU time spent (ms)=610
+		Physical memory (bytes) snapshot=377212928
+		Virtual memory (bytes) snapshot=3706560512
+		Total committed heap usage (bytes)=1163395072
+		Peak Map Physical memory (bytes)=377212928
+		Peak Map Virtual memory (bytes)=3706560512
+	Budget
+		NOT_NULL=4704
+	Genres
+		NOT_NULL=4704
+	MovieId
+		NOT_NULL=4704
+		UNIQUE=4704
+	OriginalLanguage
+		NOT_NULL=4704
+	Popularity
+		NOT_NULL=4704
+	ReleaseDate
+		NOT_NULL=4704
+	Revenue
+		NOT_NULL=4704
+	Rows
+		ROW_COUNT=4704
+	Runtime
+		NOT_NULL=4704
+	SpokenLanguages
+		NOT_NULL=4704
+	Title
+		DUPLICATE=3
+		NOT_NULL=4704
+		UNIQUE=4701
+	VoteAvg
+		NOT_NULL=4704
+	File Input Format Counters
+		Bytes Read=365843
+	File Output Format Counters
+		Bytes Written=0

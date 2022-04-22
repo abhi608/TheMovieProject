@@ -1,0 +1,80 @@
+Started main
+22/04/22 11:54:09 INFO client.RMProxy: Connecting to ResourceManager at horton.hpc.nyu.edu/10.32.35.134:8032
+22/04/22 11:54:10 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+22/04/22 11:54:10 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /user/av2783/.staging/job_1648648882306_28877
+22/04/22 11:54:10 INFO input.FileInputFormat: Total input files to process : 1
+22/04/22 11:54:10 INFO mapreduce.JobSubmitter: number of splits:1
+22/04/22 11:54:10 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+22/04/22 11:54:11 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1648648882306_28877
+22/04/22 11:54:11 INFO mapreduce.JobSubmitter: Executing with tokens: []
+22/04/22 11:54:11 INFO conf.Configuration: resource-types.xml not found
+22/04/22 11:54:11 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+22/04/22 11:54:11 INFO impl.YarnClientImpl: Submitted application application_1648648882306_28877
+22/04/22 11:54:11 INFO mapreduce.Job: The url to track the job: http://horton.hpc.nyu.edu:8088/proxy/application_1648648882306_28877/
+22/04/22 11:54:11 INFO mapreduce.Job: Running job: job_1648648882306_28877
+22/04/22 11:54:16 INFO mapreduce.Job: Job job_1648648882306_28877 running in uber mode : false
+22/04/22 11:54:16 INFO mapreduce.Job:  map 0% reduce 0%
+22/04/22 11:54:22 INFO mapreduce.Job:  map 100% reduce 0%
+22/04/22 11:54:27 INFO mapreduce.Job:  map 100% reduce 100%
+22/04/22 11:54:27 INFO mapreduce.Job: Job job_1648648882306_28877 completed successfully
+22/04/22 11:54:27 INFO mapreduce.Job: Counters: 54
+	File System Counters
+		FILE: Number of bytes read=123204
+		FILE: Number of bytes written=689031
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=46137245
+		HDFS: Number of bytes written=106893
+		HDFS: Number of read operations=8
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=16608
+		Total time spent by all reduces in occupied slots (ms)=12120
+		Total time spent by all map tasks (ms)=4152
+		Total time spent by all reduce tasks (ms)=2020
+		Total vcore-milliseconds taken by all map tasks=4152
+		Total vcore-milliseconds taken by all reduce tasks=2020
+		Total megabyte-milliseconds taken by all map tasks=17006592
+		Total megabyte-milliseconds taken by all reduce tasks=12410880
+	Map-Reduce Framework
+		Map input records=4813
+		Map output records=14238
+		Map output bytes=161323
+		Map output materialized bytes=123200
+		Input split bytes=145
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=4756
+		Reduce shuffle bytes=123200
+		Reduce input records=14238
+		Reduce output records=4756
+		Spilled Records=28476
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=909
+		CPU time spent (ms)=38660
+		Physical memory (bytes) snapshot=1521754112
+		Virtual memory (bytes) snapshot=7438479360
+		Total committed heap usage (bytes)=2787115008
+		Peak Map Physical memory (bytes)=1132802048
+		Peak Map Virtual memory (bytes)=3713089536
+		Peak Reduce Physical memory (bytes)=388952064
+		Peak Reduce Virtual memory (bytes)=3725389824
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=46137100
+	File Output Format Counters
+		Bytes Written=106893
