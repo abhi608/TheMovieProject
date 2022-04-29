@@ -32,6 +32,7 @@ public class MovieToCastMapper extends Mapper<LongWritable, Text, Text, Text> {
 		
 		k.set(dirId + "_" + year);
 		v.set(popularity+"_"+profit+"_"+revenue);
+		context.write(k, v);
 		
 	}
 	
