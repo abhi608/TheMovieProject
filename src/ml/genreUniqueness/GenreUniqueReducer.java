@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.Reducer.Context;
 public class GenreUniqueReducer extends Reducer<Text, Text, Text, Text> {
 	
 	Text v = new Text();
-	float totalMovies = 4669f;
+	double totalMovies = 4669d;
 	
 	@Override
 	public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
@@ -16,7 +16,8 @@ public class GenreUniqueReducer extends Reducer<Text, Text, Text, Text> {
 		for(Text value : values) {
 			size++;
 		}
-		float genreUniqueness = size / totalMovies;
+		double genreUniqueness = size / totalMovies;
+		genreUniqueness = -Math.log(genreUniqueness);
 		v.set(String.valueOf(genreUniqueness));
 		context.write(key, v);
 	}
