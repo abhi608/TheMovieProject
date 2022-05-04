@@ -24,7 +24,7 @@ public class GenreUniqueMapper extends Mapper<LongWritable, Text, Text, Text> {
 		for(String s : cols) {
 			if(Strings.isNullOrEmpty(s)) return;
 		}
-		String[] genreIds = cols[2].split(",");
+		String[] genreIds = cols[2].replaceAll("\"", "").split(",");
 		String movieId = cols[3].trim();
 		v.set(movieId);
 		for(String id : genreIds) {

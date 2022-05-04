@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.Reducer.Context;
 public class GenreUniqueReducer extends Reducer<Text, Text, Text, Text> {
 	
 	Text v = new Text();
-	int totalMovies = 4669;
+	float totalMovies = 4669f;
 	
 	@Override
 	public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
