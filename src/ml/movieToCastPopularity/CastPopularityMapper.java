@@ -24,7 +24,7 @@ public class CastPopularityMapper extends Mapper<LongWritable, Text, Text, Text>
 		for(String s : cols) {
 			if(Strings.isNullOrEmpty(s)) return;
 		}
-		String[] castIds = cols[0].split(",");
+		String[] castIds = cols[0].replaceAll("\"", "").split(",");
 		String voteAvg = cols[4].trim();
 		v.set(voteAvg);
 		for(String id : castIds) {
